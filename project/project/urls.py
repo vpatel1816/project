@@ -1,12 +1,13 @@
-from django.contrib import admin
+from django.contrib import admin 
 from django.urls import path
-from . import views
-
+from . import  views
+from django.conf.urls import url,include
+ 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about_us/', views.about),
-    path('', views.home),
-
+    path('', views.home), 
+    path('articles', include('articles.urls')),
 ]
 
 
